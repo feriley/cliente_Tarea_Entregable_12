@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Endpoints Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Configurar API Endpoints</h1>
+    <form id="apiForm" method="GET">
+        <label for="baseUrl">Base URL:</label>
+        <input type="text" id="baseUrl" name="baseUrl" placeholder="http://localhost:8080" value="http://localhost:8080" pattern="https?://.+" required>
+
+        <label for="getAllEndpoint">Endpoint Obtener Todos:</label>
+        <input type="text" id="getAllEndpoint" name="getAllEndpoint" placeholder="/api/v1/products/" required>
+
+        <label for="insertEndpoint">Endpoint Insertar:</label>
+        <input type="text" id="insertEndpoint" name="insertEndpoint" placeholder="/api/v1/products" required>
+
+        <label for="editEndpoint">Endpoint Editar:</label>
+        <input type="text" id="editEndpoint" name="editEndpoint" placeholder="/api/v1/products/{id}" required>
+
+        <label for="deleteEndpoint">Endpoint Eliminar:</label>
+        <input type="text" id="deleteEndpoint" name="deleteEndpoint" placeholder="/api/v1/products/{id}" required>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <h2>Tabla de Productos</h2>
+    <div id="apiResponse"></div>
+
+    <h2>Insertar Nuevo Producto</h2>
+    <form id="insertForm">
+        <input type="text" id="newName" placeholder="Nombre del producto" required>
+        <input type="number" id="newPrice" placeholder="Precio del producto" required>
+        <button type="button" onclick="insertProduct()">Insertar Producto</button>
+    </form>
+
+    <script src="app.js"></script>
+</body>
+</html>
